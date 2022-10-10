@@ -2,17 +2,30 @@ class User {
   constructor(name, surname) {
     (this.nome = name), (this.cognome = surname);
   }
+
+  createListItem() {
+    document.getElementById(
+      "data-list"
+    ).innerHTML += `<div>${this.nome} ${this.cognome}</div>`;
+  }
 }
 
-/*function printData() {
+function printData() {
   let name = document.getElementById("name-value").value;
   let surname = document.getElementById("surname-value").value;
-  let list = document.getElementById("data-list");
-  let newUser = document.createElement("li");
+  let newUser = new User(name, surname);
+  newUser.createListItem();
+}
 
-  newUser.innerHTML += name += surname;
+// function printData() {
+//   let name = document.getElementById("name-value").value;
+//   let surname = document.getElementById("surname-value").value;
+//   let list = document.getElementById("data-list");
+//   let newUser = document.createElement("li");
 
-  list.appendChild(newUser);
-}*/
+//   newUser.innerHTML += name += surname;
 
-console.log(new User("Luigi", "Crisci"));
+//   list.appendChild(newUser);
+// }
+
+//console.log(new User("Luigi", "Crisci"));
